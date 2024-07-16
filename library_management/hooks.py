@@ -246,7 +246,7 @@ doc_events = {
         "before_insert": "library_management.www.testhook.before_insert"
     },
 }
-fixtures = [
+fixtures = [                                                   #bench export-fixtures
     {
         'dt':'Role',
         'filters':[['name', 'in',['Librarian','Library Member']]]
