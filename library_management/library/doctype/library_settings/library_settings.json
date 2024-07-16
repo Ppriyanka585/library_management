@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-24 12:53:02.664627",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "loan_period",
+  "max_articles",
+  "late_return_fine",
+  "book_borrow_period",
+  "damage_fine_factor",
+  "lost_fine_factor"
+ ],
+ "fields": [
+  {
+   "fieldname": "loan_period",
+   "fieldtype": "Int",
+   "label": "Loan Period"
+  },
+  {
+   "fieldname": "max_articles",
+   "fieldtype": "Int",
+   "label": "Maximum Number of Issued Articles "
+  },
+  {
+   "fieldname": "book_borrow_period",
+   "fieldtype": "Int",
+   "label": "Book Borrow Period"
+  },
+  {
+   "fieldname": "damage_fine_factor",
+   "fieldtype": "Int",
+   "label": "Damage Fine Factor"
+  },
+  {
+   "fieldname": "lost_fine_factor",
+   "fieldtype": "Int",
+   "label": "Lost Fine Factor"
+  },
+  {
+   "fieldname": "late_return_fine",
+   "fieldtype": "Int",
+   "label": "Late Return Fine Per Day"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-06-27 11:16:36.893524",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Library Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

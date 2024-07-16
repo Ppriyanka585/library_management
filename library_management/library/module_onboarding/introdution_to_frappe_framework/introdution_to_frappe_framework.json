@@ -1,0 +1,29 @@
+{
+ "allow_roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Librarian"
+  }
+ ],
+ "creation": "2024-07-10 11:29:37.672101",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://frappeframework.com/docs/user/en/introduction",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2024-07-10 11:29:37.672101",
+ "modified_by": "Administrator",
+ "module": "library",
+ "name": "Introdution to Frappe Framework",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Introduction to Website"
+  }
+ ],
+ "subtitle": "Introduction",
+ "success_message": "Your are complete introduction",
+ "title": "Frappe"
+}
