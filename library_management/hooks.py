@@ -250,5 +250,17 @@ fixtures = [
     {
         'dt':'Role',
         'filters':[['name', 'in',['Librarian','Library Member']]]
+    },
+    {
+        'dt':'Workflow State',
+        'filters':[['name', 'in',['Rejected','Approved','Approval pending by librarian','Pending']]]
+    },
+    {
+        'dt':'Workflow',
+        'filters':[['name', 'in',['Membership']]]
+    },
+    {
+        'dt':'Workflow Action Master',
+        'filters':[['name', 'in',['Submit','Approve','Reject']]]
     }
 ]
