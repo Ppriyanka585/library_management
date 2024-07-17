@@ -264,3 +264,8 @@ fixtures = [                                                   #bench export-fix
         'filters':[['name', 'in',['Submit','Approve','Reject']]]
     }
 ]
+fixtures= [
+    
+        'Custom Field'
+    
+]
