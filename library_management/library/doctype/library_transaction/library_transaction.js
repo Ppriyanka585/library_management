@@ -11,3 +11,17 @@ frappe.ui.form.on("Library Transaction", {
         })
 	},
 });
+frappe.ui.form.on('Library Transaction', {
+    refresh: function(frm) {
+        frm.add_custom_button('Create Membership', () => {
+            frappe.new_doc('Library Membership', {
+                library_transation: frm.doc.name
+            })
+        })
+        frm.add_custom_button('Reserve Book', () => {
+            frappe.new_doc('Reservation', {
+                library_transaction: frm.doc.name
+            })
+        })
+    }
+});

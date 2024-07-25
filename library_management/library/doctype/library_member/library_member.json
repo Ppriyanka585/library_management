@@ -10,7 +10,8 @@
   "last_name",
   "full_name",
   "email_address",
-  "phone"
+  "phone",
+  "date_of_birth"
  ],
  "fields": [
   {
@@ -41,11 +42,16 @@
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-17 10:48:49.858679",
+ "modified": "2024-07-25 14:58:59.542762",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Library Member",
@@ -75,9 +81,22 @@
    "role": "Librarian",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Library Member",
+   "share": 1,
+   "write": 1
   }
  ],
+ "search_fields": "full_name",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "full_name"
 }

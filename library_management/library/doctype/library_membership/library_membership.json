@@ -8,6 +8,7 @@
  "field_order": [
   "library_member",
   "full_name",
+  "date_of_birth",
   "from_date",
   "to_date",
   "paid",
@@ -64,12 +65,18 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "library_member.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-17 10:52:16.589254",
+ "modified": "2024-07-22 16:12:01.126118",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Library Membership",
@@ -86,7 +93,17 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Librarian",
+   "share": 1
   },
   {
    "create": 1,
@@ -95,17 +112,6 @@
    "export": 1,
    "print": 1,
    "read": 1,
-   "report": 1,
-   "role": "Librarian",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
    "report": 1,
    "role": "Library Member",
    "share": 1,

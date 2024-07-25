@@ -60,7 +60,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-27 11:56:34.674878",
+ "modified": "2024-07-22 16:11:21.740078",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Library Transaction",
@@ -81,6 +81,15 @@
    "write": 1
   },
   {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Librarian",
+   "share": 1
+  },
+  {
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -88,8 +97,9 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Librarian",
+   "role": "Library Member",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
