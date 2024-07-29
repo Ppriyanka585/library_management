@@ -16,7 +16,7 @@
    "fieldname": "library_member",
    "fieldtype": "Link",
    "label": "Library Member",
-   "options": "Library Membership"
+   "options": "Library Member"
   },
   {
    "fieldname": "article_name",
@@ -43,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-25 15:12:53.516917",
+ "modified": "2024-07-25 16:58:11.601256",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Reservation",

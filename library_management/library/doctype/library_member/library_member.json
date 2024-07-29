@@ -51,7 +51,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-25 14:58:59.542762",
+ "modified": "2024-07-26 09:47:19.455246",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Library Member",
@@ -94,7 +94,7 @@
    "write": 1
   }
  ],
- "search_fields": "full_name",
+ "search_fields": "full_name,first_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

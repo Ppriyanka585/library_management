@@ -6,9 +6,20 @@ frappe.ui.form.on("Reservation", {
 	onload(frm) {
         frm.set_query('library_member', () => {
             return {
-                query: 'library_management.library.doctype.library_transaction.library_transaction.custom_query',
+                query: 'library_management.library.doctype.reservation.reservation.custom_query',
                 
             }  
         })
-	},
+	},  
 });
+
+// frappe.ui.form.on("Reservation", {
+// 	onload(frm) {
+//         frm.set_query('library_member', () => {
+//             return {
+//                 query: 'library_management.library.doctype.reservation.reservation.custom_queryss',
+                
+//             }  
+//         })
+// 	},  
+// });
