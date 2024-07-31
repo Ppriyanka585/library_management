@@ -229,13 +229,12 @@ app_license = "mit"
 
 after_migrate = "library_management.www.testhook.after_migrate"
 
-
-
 # test_strings = "value"
 # test_list = "value"
 # test_dict = {
 #     "key": ""
 # }
+
 doc_events = {
     "User": {
         "after_insert": "library_management.www.testhook.after_insert"
@@ -246,36 +245,36 @@ doc_events = {
         "before_insert": "library_management.www.testhook.before_insert"
     },
 }
-# fixtures = [                                                   #bench export-fixtures
-#     {
-#         'dt':'Role',
-#         'filters':[['name', 'in',['Librarian','Library Member']]]
-#     },
-#     {
-#         'dt':'Workflow State',
-#         'filters':[['name', 'in',['Rejected','Approved','Approval pending by librarian','Pending']]]
-#     },
-#     {
-#         'dt':'Workflow',
-#         'filters':[['name', 'in',['Membership']]]
-#     },
-#     {
-#         'dt':'Workflow Action Master',
-#         'filters':[['name', 'in',['Submit','Approve','Reject']]]
-#     }
-# ]
-fixtures= [
-    
-        'Custom Field'
-    
+
+fixtures = [  # bench export-fixtures
+    {
+        "dt": "Role",
+        "filters": [["name", "in", ["Librarian", "Library Member"]]]
+    },
+    {
+        "dt": "Workflow State",
+        "filters": [["name", "in", ["Rejected", "Approved", "Approval pending by librarian", "Pending"]]]
+    },
+    {
+        "dt": "Workflow",
+        "filters": [["name", "in", ["Membership"]]]
+    },
+    {
+        "dt": "Workflow Action Master",
+        "filters": [["name", "in", ["Submit", "Approve", "Reject"]]]
+    }
 ]
+
+fixtures = [
+    "Custom Field"
+]
+
 override_doctype_class = {
     "Library Membership": "library_management.library.doctype.library_membership.library_membership.CustomLibraryMembership"
 }
 
 scheduler_events = {
     "all": [
-        
         "library_management.scheduler.scheduled_tasks.send_overdue_notifications"
     ],
 }

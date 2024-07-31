@@ -93,7 +93,7 @@
    "fieldname": "genre",
    "fieldtype": "Link",
    "label": "Genre",
-   "options": "genre",
+   "options": "Genre",
    "sort_options": 1
   },
   {
@@ -114,7 +114,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2024-07-25 14:02:52.636131",
+ "modified": "2024-07-30 10:40:10.145385",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Article",

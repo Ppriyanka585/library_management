@@ -6,7 +6,13 @@ from frappe.model.document import Document
 
 
 class LibraryMember(Document):
-    #this method will run every time a document is saved
+    """
+        method updates full name by concatenate first and last name 
+        Args:
+            self: contains the current instance
+        Returns:
+            provide the full name
+    """ 
     def before_save(self):
         self.full_name = f'{self.first_name} {self.last_name or ""}'
 

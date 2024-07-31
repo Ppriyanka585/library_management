@@ -21,7 +21,7 @@
  "modified": "2024-07-23 15:57:55.188959",
  "modified_by": "Administrator",
  "module": "library",
- "name": "genre",
+ "name": "Genre",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

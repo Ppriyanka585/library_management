@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class genre(Document):
+class Genre(Document):
 	pass

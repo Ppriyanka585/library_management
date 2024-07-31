@@ -14,7 +14,7 @@
    "fieldname": "shelf_name",
    "fieldtype": "Link",
    "label": "Shelf Name",
-   "options": "genre"
+   "options": "Genre"
   },
   {
    "fieldname": "shelf_no",
@@ -24,7 +24,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-24 12:37:59.765071",
+ "modified": "2024-07-30 10:40:10.480513",
  "modified_by": "Administrator",
  "module": "library",
  "name": "Shelf",

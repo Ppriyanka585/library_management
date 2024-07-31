@@ -6,18 +6,28 @@ from frappe.model.document import Document
 from frappe.model.docstatus import DocStatus
 from datetime import datetime
 
-
-
 class LibraryMembership(Document):
     def validate(self):
+        """
+            method check the from date is earlier than to date
+            Args:
+                self: contains the current instance
+            Returns:
+                true if condition satisfy otherwise throw error
+        """ 
         if self.from_date and self.to_date and self.from_date > self.to_date:
             frappe.throw("From Date must be earlier than To Date")
             self.from_date = None
             self.to_date = None
 
-        
-
     def before_submit(self):
+        """
+            method calculates to date basedon loan period
+            Args:
+                self: contains the current instance
+            Returns:
+                updates to date according to loan period
+        """
         print("llllloooo")
         exists = frappe.db.exists(
             "Library Membership",
@@ -31,11 +41,18 @@ class LibraryMembership(Document):
             frappe.throw("There is an active membership for this member")
 
         loan_period = frappe.db.get_single_value("Library Settings", "loan_period")
-        self.to_date = frappe.utils.add_days(self.from_date, loan_period )
-        datee = self.to_date 
+        self.to_date = frappe.utils.add_days(self.from_date, loan_period)
+        datee = self.to_date
         print(datee)
-      
+
 class CustomLibraryMembership(Document):
+    """
+        method check the library member who apply for membership whether met 18 years old 
+        Args:
+            self: contains the current instance
+        Returns:
+            true if condition satisfy otherwise throw error
+    """
     def validate(self):
         member = frappe.get_doc("Library Member", self.library_member)
         if member.date_of_birth:
@@ -47,6 +64,3 @@ class CustomLibraryMembership(Document):
         today = datetime.today()
         age = today.year - date_of_birth.year - ((today.month, today.day) < (date_of_birth.month, date_of_birth.day))
         return age
-        
-
-    
