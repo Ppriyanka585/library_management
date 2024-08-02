@@ -1,6 +1,3 @@
-# Copyright (c) 2024, Priyanka and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.model.document import Document
 from frappe.utils import date_diff, getdate
@@ -67,50 +64,46 @@ class LibraryTransaction(Document):
     def before_submit(self):
         """
         Update the status field of the article if criteria are met.
-
-        Args:
-            self: Contains the current instance of the transaction.
         """
         for i in self.add_articles:
             if i.type == "Issue":
-                print(i.article)
-                self.validate_issue()
+                print(f"Issuing article: {i.article}") 
+                self.validate_issue(i.article)  
                 self.validate_maximum_limit()
                 article = frappe.get_doc("Article", i.article)
                 article.status = "Issued"
                 article.save()
 
             elif i.type == "Return":
-                self.validate_return()
+                print(f"Returning article: {i.article}")
+                self.validate_return(i.article)
+                print(f"Returning article: {i.article}")
                 article = frappe.get_doc("Article", i.article)
                 article.status = "Available"
                 article.save()
 
-    def validate_issue(self):
+    def validate_issue(self, article_id):
         """
-        Validate if the transaction type is an issue.
+        Validate if the transaction type is an issue for the given article.
 
         Args:
-            self: Contains the current instance of the transaction.
+            article_id: The ID of the article being validated.
         """
         self.validate_membership()
+        article = frappe.get_doc("Article", article_id)
+        if article.status == "Issued":
+            frappe.throw(f"Article {article.name} is already issued by another member")
 
-        for i in self.add_articles:
-            article = frappe.get_doc("Article", i.article)
-            if article.status == "Issued":
-                frappe.throw(f"Article {article.name} is already issued by another member")
-
-    def validate_return(self):
+    def validate_return(self, article_id):
         """
-        Validate if the transaction type is a return.
+        Validate if the transaction type is a return for the given article.
 
         Args:
-            self: Contains the current instance of the transaction.
+            article_id: The ID of the article being validated.
         """
-        for i in self.add_articles:
-            article = frappe.get_doc("Article", i.article)
-            if article.status == "Available":
-                frappe.throw(f"Article {article.name} cannot be returned without being issued first")
+        article = frappe.get_doc("Article", article_id)
+        if article.status == "Available":
+            frappe.throw(f"Article {article.name} cannot be returned without being issued first")
 
     def validate_maximum_limit(self):
         """
@@ -138,7 +131,7 @@ class LibraryTransaction(Document):
             ):
                 count += 1
 
-        if count + len(self.add_articles) > max_articles:
+        if count >= max_articles:
             frappe.throw("Maximum limit reached for issuing articles")
 
     def validate_membership(self):
