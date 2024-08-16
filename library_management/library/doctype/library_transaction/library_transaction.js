@@ -25,3 +25,12 @@ frappe.ui.form.on("Library Transaction", {
         });
     },
 });
+fetch('http://<base-url>/api/method/frappe.auth.get_logged_user', {
+    headers: {
+        'Authorization': 'token api_key:api_secret'
+    }
+})
+.then(r => r.json())
+.then(r => {
+    console.log(r);
+})
